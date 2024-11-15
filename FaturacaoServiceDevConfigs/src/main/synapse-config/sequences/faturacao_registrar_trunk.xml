@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="faturacao_registrar_trunk" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log level="custom">
+        <property name="sequence_name" value="faturacao_registrar_trunk"/>
+    </log>
+    <property name="result" scope="default" type="STRING" value="0"/>
+    <script language="js"><![CDATA[var registrar_trunk = mc.getProperty("registrar_trunk");mc.setPayloadJSON(registrar_trunk)]]></script>
+    <iterate expression="//jsonArray/jsonElement" id="registrar_trunk" sequential="true">
+        <target>
+            <sequence>
+                <property description="trunk" expression="//jsonElement/trunk" name="trunk" scope="default" type="STRING"/>
+                <property description="operador" expression="//jsonElement/operador" name="operador" scope="default" type="STRING"/>
+                <payloadFactory media-type="xml">
+                    <format>
+                        <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ucc="http://ucc_v2.tmais.cv">
+                            <soapenv:Header/>
+                            <soapenv:Body>
+                                <ucc:registar_trunk_operation>
+                                    <ucc:trunk>$1</ucc:trunk>
+                                    <ucc:operador>$2</ucc:operador>
+                                    <ucc:user_create>$3</ucc:user_create>
+                                </ucc:registar_trunk_operation>
+                            </soapenv:Body>
+                        </soapenv:Envelope>
+                    </format>
+                    <args>
+                        <arg evaluator="xml" expression="$ctx:trunk"/>
+                        <arg evaluator="xml" expression="$ctx:operador"/>
+                        <arg evaluator="xml" expression="$ctx:user_create"/>
+                    </args>
+                </payloadFactory>
+                <header name="Action" scope="default" value="urn:registar_trunk_operation"/>
+                <call>
+                    <endpoint key="ucc_faturacao_EP"/>
+                </call>
+                <property description="resultado1" expression="//ucc:registar_trunk_query_element/ucc:registar_trunk_query_row/ucc:response_code" name="resultado1" scope="default" type="STRING" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ucc="http://ucc_v2.tmais.cv"/>
+                <script language="js"><![CDATA[var result = mc.getProperty("result");
+            var result1 = mc.getProperty("resultado1");
+            mc.setProperty("result",result+result1 )]]></script>
+            </sequence>
+        </target>
+    </iterate>
+    <property description="Aggregated_Responses" name="Aggregated_Responses" scope="default">
+        <jsonObject/>
+    </property>
+    <aggregate id="registrar_trunk">
+        <completeCondition>
+            <messageCount max="-1" min="-1"/>
+        </completeCondition>
+        <onComplete enclosingElementProperty="Aggregated_Responses" expression="$body/*[1]" xmlns:ns="http://org.apache.synapse/xsd">
+            <log level="custom">
+                <property expression="$ctx:resultado1" name="resultado1"/>
+            </log>
+        </onComplete>
+    </aggregate>
+    <log level="custom">
+        <property expression="get-property('result')" name="result"/>
+    </log>
+    <filter xpath="get-property('resultado1')=1">
+        <then>
+            <payloadFactory media-type="xml">
+                <format>
+                    <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ucc="http://ucc_v2.tmais.cv">
+                        <soapenv:Header/>
+                        <soapenv:Body>
+                            <ucc:faturacao_registrar_trunk_response>
+                                <!--Optional:-->
+                                <ucc:response_header>
+                                    <!--Optional:-->
+                                    <ucc:autorization_result>
+                                        <!--Optional:-->
+                                        <ucc:autorization_code>1</ucc:autorization_code>
+                                        <!--Optional:-->
+                                        <ucc:autorization_desc>permition ok</ucc:autorization_desc>
+                                    </ucc:autorization_result>
+                                    <!--Optional:-->
+                                    <ucc:operation_result>
+                                        <!--Optional:-->
+                                        <ucc:operation_code>1</ucc:operation_code>
+                                        <!--Optional:-->
+                                        <ucc:operation_desc>inserido com sucesso</ucc:operation_desc>
+                                        <!--Optional:-->
+                                        <ucc:operation_type>sucesso</ucc:operation_type>
+                                    </ucc:operation_result>
+                                </ucc:response_header>
+                            </ucc:faturacao_registrar_trunk_response>
+                        </soapenv:Body>
+                    </soapenv:Envelope>
+                </format>
+                <args/>
+            </payloadFactory>
+        </then>
+        <else>
+            <payloadFactory media-type="xml">
+                <format>
+                    <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ucc="http://ucc_v2.tmais.cv">
+                        <soapenv:Header/>
+                        <soapenv:Body>
+                            <ucc:faturacao_registrar_trunk_response>
+                                <!--Optional:-->
+                                <ucc:response_header>
+                                    <!--Optional:-->
+                                    <ucc:autorization_result>
+                                        <!--Optional:-->
+                                        <ucc:autorization_code>0</ucc:autorization_code>
+                                        <!--Optional:-->
+                                        <ucc:autorization_desc>permition not ok</ucc:autorization_desc>
+                                    </ucc:autorization_result>
+                                    <!--Optional:-->
+                                    <ucc:operation_result>
+                                        <!--Optional:-->
+                                        <ucc:operation_code>0</ucc:operation_code>
+                                        <!--Optional:-->
+                                        <ucc:operation_desc>falha na insercao</ucc:operation_desc>
+                                        <!--Optional:-->
+                                        <ucc:operation_type>erro</ucc:operation_type>
+                                    </ucc:operation_result>
+                                </ucc:response_header>
+                            </ucc:faturacao_registrar_trunk_response>
+                        </soapenv:Body>
+                    </soapenv:Envelope>
+                </format>
+                <args/>
+            </payloadFactory>
+        </else>
+    </filter>
+</sequence>

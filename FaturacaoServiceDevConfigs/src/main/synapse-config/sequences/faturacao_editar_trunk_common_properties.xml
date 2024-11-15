@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="faturacao_editar_trunk_common_properties" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log level="custom">
+        <property name="sequence_name" value="faturacao_editar_trunk_common_properties"/>
+    </log>
+    <property name="OperationName" scope="default" type="STRING" value="editar_trunk"/>
+    <property description="user_update" expression="json-eval($.OperationRequest.User.UserID)" name="user_update" scope="default" type="STRING"/>
+    <property description="id" expression="json-eval($.OperationRequest.RequestBody.editar_trunk.id)" name="id" scope="default" type="STRING"/>
+</sequence>
