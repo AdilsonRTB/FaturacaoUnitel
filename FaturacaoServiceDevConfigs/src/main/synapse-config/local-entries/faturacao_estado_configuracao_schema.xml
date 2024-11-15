@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<localEntry key="faturacao_estado_configuracao_schema" xmlns="http://ws.apache.org/ns/synapse"><![CDATA[{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Generated schema for Root",
+  "type": "object",
+  "properties": {
+    "OperationRequest": {
+      "type": "object",
+      "properties": {
+        "RequestHeader": {
+          "type": "object",
+          "properties": {
+            "Autorization": {
+              "type": "object",
+              "properties": {
+                "UserName": {
+                  "type": "string"
+                },
+                "Password": {
+                  "type": "string"
+                },
+                "CanalCode": {
+                  "type": "string"
+                },
+                "RolesName": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "UserName",
+                "Password",
+                "CanalCode",
+                "RolesName"
+              ]
+            },
+            "User": {
+              "type": "object",
+              "properties": {
+                "UserID": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "UserID"
+              ]
+            },
+            "Token": {
+              "type": "object",
+              "properties": {
+                "TokenID": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "TokenID"
+              ]
+            },
+            "RemoteHost": {
+              "type": "object",
+              "properties": {
+                "RemoteIP": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "RemoteIP"
+              ]
+            }
+          },
+          "required": [
+            "Autorization",
+            "User",
+            "Token",
+            "RemoteHost"
+          ]
+        },
+        "RequestBody": {
+          "type": "object",
+          "properties": {
+            "estado_configuracao": {
+              "type": "object",
+              "properties": {
+                "ID": {
+                  "type": "number"
+                },
+                "STATUS": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "ID",
+                "STATUS"
+              ]
+            }
+          },
+          "required": [
+            "estado_configuracao"
+          ]
+        }
+      },
+      "required": [
+        "RequestHeader",
+        "RequestBody"
+      ]
+    }
+  },
+  "required": [
+    "OperationRequest"
+  ]
+}]]></localEntry>

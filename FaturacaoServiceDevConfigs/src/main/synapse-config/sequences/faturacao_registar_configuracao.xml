@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="faturacao_registar_configuracao" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log level="custom">
+        <property name="sequence_name" value="faturacao_registar"/>
+    </log>
+    <payloadFactory description="" media-type="xml">
+        <format>
+            <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:ucc="http://ucc_v2.tmais.cv">
+                <soap:Header/>
+                <soap:Body>
+                    <ucc:save_operador_operation>
+                        <ucc:COUNTRY>$1</ucc:COUNTRY>
+                        <ucc:OPERATOR>$2</ucc:OPERATOR>
+                        <ucc:COIN>$3</ucc:COIN>
+                        <ucc:USER_CREATE>$4</ucc:USER_CREATE>
+                    </ucc:save_operador_operation>
+                </soap:Body>
+            </soap:Envelope>
+        </format>
+        <args>
+            <arg evaluator="xml" expression="$ctx:COUNTRY"/>
+            <arg evaluator="xml" expression="$ctx:OPERATOR"/>
+            <arg evaluator="xml" expression="$ctx:COIN"/>
+            <arg evaluator="xml" expression="$ctx:USER"/>
+        </args>
+    </payloadFactory>
+    <header name="Action" scope="default" value="urn:save_operador_operation"/>
+    <call>
+        <endpoint key="ucc_faturacao_EP"/>
+    </call>
+    <property description="ID" expression="//ucc:ID/text()" name="ID" scope="default" type="STRING" xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:ucc="http://ucc_v2.tmais.cv"/>
+</sequence>

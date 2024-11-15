@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="faturacao_listar_configuracao_common_properties" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log level="custom">
+        <property name="sequence_name" value="cliente_mais_faturacao_listar_configuracao_commom_property"/>
+    </log>
+    <property description="OperationName" name="OperationName" scope="default" type="STRING" value="faturacao_listar_configuracao"/>
+    <property description="body" expression="$body" name="body" scope="default" type="OM"/>
+    <property description="USER" expression="json-eval($.OperationRequest.RequestHeader.User.UserID)" name="USER" scope="default" type="STRING"/>
+    <property description="PAIS" expression="json-eval($.OperationRequest.RequestBody.listar_configuracao.PAIS)" name="PAIS" scope="default" type="STRING"/>
+    <property description="OPERADORA" expression="json-eval($.OperationRequest.RequestBody.listar_configuracao.OPERADORA)" name="OPERADORA" scope="default" type="STRING"/>
+    <property description="SERVICO" expression="json-eval($.OperationRequest.RequestBody.listar_configuracao.SERVICO)" name="SERVICO" scope="default" type="STRING"/>
+    <property description="ESTADO" expression="json-eval($.OperationRequest.RequestBody.listar_configuracao.ESTADO)" name="ESTADO" scope="default" type="STRING"/>
+    <property description="DATAINICIO" expression="json-eval($.OperationRequest.RequestBody.listar_configuracao.DATAINICIO)" name="DATAINICIO" scope="default" type="STRING"/>
+    <property description="DATAFIM" expression="json-eval($.OperationRequest.RequestBody.listar_configuracao.DATAFIM)" name="DATAFIM" scope="default" type="STRING"/>
+</sequence>

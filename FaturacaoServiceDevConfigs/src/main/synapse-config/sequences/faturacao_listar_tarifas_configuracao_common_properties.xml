@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="faturacao_listar_tarifas_configuracao_common_properties" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log level="custom">
+        <property name="sequence_name" value="cliente_mais_faturacao_listar_tarifas_configuracao_commom_property"/>
+    </log>
+    <property description="OperationName" name="OperationName" scope="default" type="STRING" value="faturacao_listar_operadora_configuracao"/>
+    <property description="body" expression="$body" name="body" scope="default" type="OM"/>
+    <property description="USER" expression="json-eval($.OperationRequest.RequestHeader.User.UserID)" name="USER" scope="default" type="STRING"/>
+    <property description="OPERADOR" expression="json-eval($.OperationRequest.RequestBody.listar_tarifas.OPERATOR)" name="OPERADOR" scope="default" type="STRING"/>
+</sequence>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="ApiConfiguracao" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/ApiConfiguracao.xml</file>
+    </artifact>
+    <artifact name="ApiConfiguracao_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/ApiConfiguracao_swagger.yaml</file>
+    </artifact>
+    <artifact name="ApiConfiguracao_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/ApiConfiguracao_metadata.yaml</file>
+    </artifact>
+    <artifact name="faturacao_registar_configuracao_resource" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/faturacao_registar_configuracao_resource.xml</file>
+    </artifact>
+    <artifact name="faturacao_registar_configuracao_validate" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/faturacao_registar_configuracao_validate.xml</file>
+    </artifact>
+    <artifact name="faturacao_registar_configuracao_schema" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/faturacao_registar_configuracao_schema.xml</file>
+    </artifact>
+    <artifact name="faturacao_registar_configuracao_common_properties" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/faturacao_registar_configuracao_common_properties.xml</file>
+    </artifact>
+    <artifact name="faturacao_registar_configuracao" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/faturacao_registar_configuracao.xml</file>
+    </artifact>
+    <artifact name="ucc_faturacao_EP" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/ucc_faturacao_EP.xml</file>
+    </artifact>
+    <artifact name="faturacao_registar_tarifas_configuracao" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/faturacao_registar_tarifas_configuracao.xml</file>
+    </artifact>
+    <artifact name="faturacao_save_registar_tarifas" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/faturacao_save_registar_tarifas.xml</file>
+    </artifact>
+    <artifact name="faturacao_update_registar_tarifas" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/faturacao_update_registar_tarifas.xml</file>
+    </artifact>
+    <artifact name="faturacao_atualizar_configuracao_resource" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/faturacao_atualizar_configuracao_resource.xml</file>
+    </artifact>
+    <artifact name="faturacao_atualizar_configuracao_validate" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/faturacao_atualizar_configuracao_validate.xml</file>
+    </artifact>
+    <artifact name="faturacao_atualizar_configuracao_schema" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/faturacao_atualizar_configuracao_schema.xml</file>
+    </artifact>
+    <artifact name="faturacao_atualizar_configuracao_common_properties" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/faturacao_atualizar_configuracao_common_properties.xml</file>
+    </artifact>
+    <artifact name="faturacao_atualizar_configuracao" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/faturacao_atualizar_configuracao.xml</file>
+    </artifact>
+    <artifact name="faturacao_atualizar_tarifas_configuracao" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/faturacao_atualizar_tarifas_configuracao.xml</file>
+    </artifact>
+    <artifact name="faturacao_listar_configuracao_resource" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/faturacao_listar_configuracao_resource.xml</file>
+    </artifact>
+    <artifact name="faturacao_listar_configuracao" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/faturacao_listar_configuracao.xml</file>
+    </artifact>
+    <artifact name="faturacao_listar_configuracao_validate" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/faturacao_listar_configuracao_validate.xml</file>
+    </artifact>
+    <artifact name="faturacao_listar_configuracao_schema" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/faturacao_listar_configuracao_schema.xml</file>
+    </artifact>
+    <artifact name="faturacao_listar_configuracao_common_properties" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/faturacao_listar_configuracao_common_properties.xml</file>
+    </artifact>
+    <artifact name="faturacao_estado_configuracao_resource" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/faturacao_estado_configuracao_resource.xml</file>
+    </artifact>
+    <artifact name="faturacao_estado_configuracao_validate" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/faturacao_estado_configuracao_validate.xml</file>
+    </artifact>
+    <artifact name="faturacao_estado_configuracao_schema" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/faturacao_estado_configuracao_schema.xml</file>
+    </artifact>
+    <artifact name="faturacao_estado_configuracao_common_properties" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/faturacao_estado_configuracao_common_properties.xml</file>
+    </artifact>
+    <artifact name="faturacao_estado_configuracao" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/faturacao_estado_configuracao.xml</file>
+    </artifact>
+    <artifact name="faturacao_listar_pais_configuracao_resource" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/faturacao_listar_pais_configuracao_resource.xml</file>
+    </artifact>
+    <artifact name="faturacao_listar_pais_configuracao_validate" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/faturacao_listar_pais_configuracao_validate.xml</file>
+    </artifact>
+    <artifact name="faturacao_listar_pais_configuracao" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/faturacao_listar_pais_configuracao.xml</file>
+    </artifact>
+    <artifact name="faturacao_listar_operadora_configuracao_resource" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/faturacao_listar_operadora_configuracao_resource.xml</file>
+    </artifact>
+    <artifact name="faturacao_listar_operadora_configuracao_validate" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/faturacao_listar_operadora_configuracao_validate.xml</file>
+    </artifact>
+    <artifact name="faturacao_listar_operadora_configuracao_schema" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/faturacao_listar_operadora_configuracao_schema.xml</file>
+    </artifact>
+    <artifact name="faturacao_listar_operadora_configuracao_common_properties" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/faturacao_listar_operadora_configuracao_common_properties.xml</file>
+    </artifact>
+    <artifact name="faturacao_listar_operadora_configuracao" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/faturacao_listar_operadora_configuracao.xml</file>
+    </artifact>
+    <artifact name="faturacao_listar_tarifas_configuracao_resource" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/faturacao_listar_tarifas_configuracao_resource.xml</file>
+    </artifact>
+    <artifact name="faturacao_listar_tarifas_configuracao_validate" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/faturacao_listar_tarifas_configuracao_validate.xml</file>
+    </artifact>
+    <artifact name="faturacao_listar_tarifas_configuracao_common_properties" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/faturacao_listar_tarifas_configuracao_common_properties.xml</file>
+    </artifact>
+    <artifact name="faturacao_listar_tarifas_configuracao" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/faturacao_listar_tarifas_configuracao.xml</file>
+    </artifact>
+    <artifact name="faturacao_listar_tarifas_configuracao_schema" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/faturacao_listar_tarifas_configuracao_schema.xml</file>
+    </artifact>
+</artifacts>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/configuracao" name="ApiConfiguracao" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST" uri-template="/registar_configuracao">
+        <inSequence>
+            <sequence key="faturacao_registar_configuracao_resource"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" uri-template="/atualizar_configuracao">
+        <inSequence>
+            <sequence key="faturacao_atualizar_configuracao_resource"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" uri-template="/listar_configuracao">
+        <inSequence>
+            <sequence key="faturacao_listar_configuracao_resource"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" uri-template="/estado_configuracao">
+        <inSequence>
+            <sequence key="faturacao_estado_configuracao_resource"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" uri-template="/listar_pais">
+        <inSequence>
+            <sequence key="faturacao_listar_pais_configuracao_resource"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" uri-template="/listar_operadora">
+        <inSequence>
+            <sequence key="faturacao_listar_operadora_configuracao_resource"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" uri-template="/listar_tarifas_configuracao">
+        <inSequence>
+            <sequence key="faturacao_listar_tarifas_configuracao_resource"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

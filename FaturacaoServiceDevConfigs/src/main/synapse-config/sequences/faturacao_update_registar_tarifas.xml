@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="faturacao_update_registar_tarifas" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log level="custom">
+        <property name="sequence_name" value="faturacao_save_registar_tarifas"/>
+    </log>
+    <payloadFactory description="" media-type="xml">
+        <format>
+            <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:ucc="http://ucc_v2.tmais.cv">
+                <soap:Header/>
+                <soap:Body>
+                    <ucc:update_tarifas_operation>
+                        <ucc:OPERATOR>$1</ucc:OPERATOR>
+                        <ucc:SERVICE>$2</ucc:SERVICE>
+                        <ucc:RATE>$3</ucc:RATE>
+                        <ucc:START_DATE>$4</ucc:START_DATE>
+                        <ucc:END_DATE>$5</ucc:END_DATE>
+                        <ucc:USER_UPDATE>$6</ucc:USER_UPDATE>
+                        <ucc:ID>$7</ucc:ID>
+                    </ucc:update_tarifas_operation>
+                </soap:Body>
+            </soap:Envelope>
+        </format>
+        <args>
+            <arg evaluator="xml" expression="$ctx:ID"/>
+            <arg evaluator="xml" expression="$ctx:SERVICE"/>
+            <arg evaluator="xml" expression="$ctx:RATE"/>
+            <arg evaluator="xml" expression="$ctx:START_DATE"/>
+            <arg evaluator="xml" expression="$ctx:END_DATE"/>
+            <arg evaluator="xml" expression="$ctx:USER"/>
+            <arg evaluator="xml" expression="$ctx:ID_RATE"/>
+        </args>
+    </payloadFactory>
+    <header name="Action" scope="default" value="urn:update_tarifas_operation"/>
+    <call>
+        <endpoint key="ucc_faturacao_EP"/>
+    </call>
+</sequence>

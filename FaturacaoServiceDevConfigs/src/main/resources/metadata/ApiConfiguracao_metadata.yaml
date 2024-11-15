@@ -1,0 +1,11 @@
+---
+key: "ApiConfiguracao-1.0.0"
+name : "ApiConfiguracao"
+displayName : "ApiConfiguracao"
+description: "Sample API"
+version: "1.0.0"
+serviceUrl: "https://{MI_HOST}:{MI_PORT}/configuracao"
+definitionType: "OAS3"
+securityType: "BASIC"
+mutualSSLEnabled: false
+apiId : "null"

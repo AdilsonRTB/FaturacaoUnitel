@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="faturacao_registar_configuracao_common_properties" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log level="custom">
+        <property name="sequence_name" value="cliente_mais_faturacao_registar_configuracao_commom_property"/>
+    </log>
+    <property description="OperationName" name="OperationName" scope="default" type="STRING" value="faturacao_registar_configuracao"/>
+    <property description="body" expression="$body" name="body" scope="default" type="OM"/>
+    <property description="USER" expression="json-eval($.OperationRequest.RequestHeader.User.UserID)" name="USER" scope="default" type="STRING"/>
+    <property description="COUNTRY" expression="json-eval($.OperationRequest.RequestBody.registar_configuracao.COUNTRY)" name="COUNTRY" scope="default" type="STRING"/>
+    <property description="OPERATOR" expression="json-eval($.OperationRequest.RequestBody.registar_configuracao.OPERATOR)" name="OPERATOR" scope="default" type="STRING"/>
+    <property description="COIN" expression="json-eval($.OperationRequest.RequestBody.registar_configuracao.COIN)" name="COIN" scope="default" type="STRING"/>
+</sequence>

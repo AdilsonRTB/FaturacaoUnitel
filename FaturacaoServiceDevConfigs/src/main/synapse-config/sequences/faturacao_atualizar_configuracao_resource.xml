@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="faturacao_atualizar_configuracao_resource" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log level="custom">
+        <property name="APIName" value="cliente_mais"/>
+        <property name="SequenceName" value="faturacao_atualizar_configuracao_resource"/>
+    </log>
+    <sequence key="faturacao_atualizar_configuracao_validate"/>
+    <sequence key="faturacao_atualizar_configuracao_common_properties"/>
+    <sequence key="API_Request"/>
+    <sequence key="AutorizationDigital"/>
+    <filter xpath="get-property('RESULT')=1">
+        <then>
+            <sequence key="faturacao_atualizar_configuracao"/>
+            <filter xpath="$ctx:ID > 0">
+                <then>
+                    <sequence key="faturacao_atualizar_tarifas_configuracao"/>
+                </then>
+                <else>
+                    <payloadFactory media-type="xml">
+                        <format>
+                            <Response xmlns="">
+                                <operation_code>0</operation_code>
+                                <Status>Error</Status>
+                                <Message>An error occurred while processing your request.</Message>
+                            </Response>
+                        </format>
+                        <args/>
+                    </payloadFactory>
+                </else>
+            </filter>
+        </then>
+        <else>
+            <payloadFactory media-type="xml">
+                <format>
+                    <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ucc="http://ucc_v2.tmais.cv">
+                        <soapenv:Header/>
+                        <soapenv:Body>
+                            <ucc:faturacao_atualizar_configuracao_response>
+                                <!--Optional:-->
+                                <ucc:response_header>
+                                    <!--Optional:-->
+                                    <ucc:autorization_result>
+                                        <!--Optional:-->
+                                        <ucc:autorization_code>0</ucc:autorization_code>
+                                        <!--Optional:-->
+                                        <ucc:autorization_desc>permition not ok</ucc:autorization_desc>
+                                    </ucc:autorization_result>
+                                    <!--Optional:-->
+                                    <ucc:operation_result>
+                                        <!--Optional:-->
+                                        <ucc:operation_code>0</ucc:operation_code>
+                                        <!--Optional:-->
+                                        <ucc:operation_desc>operation error</ucc:operation_desc>
+                                        <!--Optional:-->
+                                        <ucc:operation_type>error</ucc:operation_type>
+                                    </ucc:operation_result>
+                                </ucc:response_header>
+                                <ucc:response_body>
+                                    <!--Zero or more repetitions:-->
+                                    <ucc:response_atribute>
+                                        <!--Optional:-->
+                                        <ucc:label>0</ucc:label>
+                                        <!--Optional:-->
+                                        <ucc:value>0</ucc:value>
+                                    </ucc:response_atribute>
+                                </ucc:response_body>
+                            </ucc:faturacao_atualizar_configuracao_response>
+                        </soapenv:Body>
+                    </soapenv:Envelope>
+                </format>
+                <args/>
+            </payloadFactory>
+        </else>
+    </filter>
+    <property name="messageType" scope="axis2" type="STRING" value="application/json"/>
+    <property name="Content-Type" scope="transport" type="STRING" value="application/json"/>
+    <sequence key="API_Response"/>
+    <respond/>
+</sequence>

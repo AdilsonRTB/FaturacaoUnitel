@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="faturacao_registar_tarifas_configuracao" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <enrich>
+        <source clone="true" property="body" type="property"/>
+        <target type="body"/>
+    </enrich>
+    <iterate expression="//TARIFAS" id="iterate">
+        <target>
+            <sequence>
+                <log level="custom">
+                    <property name="Iterate" value="faturacao_registar_tarifas_iterate"/>
+                </log>
+                <property description="RATE" expression="//RATE" name="RATE" scope="default" type="STRING"/>
+                <property description="SERVICE" expression="//SERVICE" name="SERVICE" scope="default" type="STRING"/>
+                <property description="START_DATE" expression="//START_DATE" name="START_DATE" scope="default" type="STRING"/>
+                <property description="END_DATE" expression="//END_DATE" name="END_DATE" scope="default" type="STRING"/>
+                <property description="ID_RATE" expression="//ID_RATE" name="ID_RATE" scope="default" type="STRING"/>
+                <sequence key="faturacao_save_registar_tarifas"/>
+            </sequence>
+        </target>
+    </iterate>
+    <aggregate id="iterate">
+        <completeCondition>
+            <messageCount max="-1" min="-1"/>
+        </completeCondition>
+        <onComplete aggregateElementType="root" expression="$body//*[1]" xmlns:ucc="http://ucc_v2.tmais.cv">
+            <log level="full"/>
+        </onComplete>
+    </aggregate>
+    <payloadFactory media-type="xml">
+        <format>
+            <Response xmlns="">
+                <operation_code>1</operation_code>
+                <Status>Success</Status>
+                <Message>Your request has been processed successfully.</Message>
+            </Response>
+        </format>
+        <args/>
+    </payloadFactory>
+</sequence>

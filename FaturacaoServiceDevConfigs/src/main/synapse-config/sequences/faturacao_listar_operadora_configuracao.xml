@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="faturacao_listar_operadora_configuracao" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log level="custom">
+        <property name="sequence_name" value="faturacao_listar_operadora"/>
+    </log>
+    <payloadFactory description="" media-type="xml">
+        <format>
+            <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ucc="http://ucc_v2.tmais.cv">
+                <soapenv:Header/>
+                <soapenv:Body>
+                    <ucc:listar_operadora_operation>
+                        <ucc:COUNTRY>$1</ucc:COUNTRY>
+                    </ucc:listar_operadora_operation>
+                </soapenv:Body>
+            </soapenv:Envelope>
+        </format>
+        <args>
+            <arg evaluator="xml" expression="$ctx:PAIS"/>
+        </args>
+    </payloadFactory>
+    <header name="Action" scope="default" value="urn:listar_operadora_operation"/>
+    <call>
+        <endpoint key="ucc_faturacao_EP"/>
+    </call>
+</sequence>

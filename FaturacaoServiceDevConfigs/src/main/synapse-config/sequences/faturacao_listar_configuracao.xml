@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="faturacao_listar_configuracao" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log level="custom">
+        <property name="sequence_name" value="faturacao_listar"/>
+    </log>
+    <payloadFactory description="" media-type="xml">
+        <format>
+            <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ucc="http://ucc_v2.tmais.cv">
+                <soapenv:Header/>
+                <soapenv:Body>
+                    <ucc:listar_operador_operation>
+                        <ucc:PAIS>$1</ucc:PAIS>
+                        <ucc:OPERADORA>$2</ucc:OPERADORA>
+                        <ucc:SERVICO>$3</ucc:SERVICO>
+                        <ucc:ESTADO>$4</ucc:ESTADO>
+                        <ucc:DATAINICIO>$5</ucc:DATAINICIO>
+                        <ucc:DATAFIM>$6</ucc:DATAFIM>
+                    </ucc:listar_operador_operation>
+                </soapenv:Body>
+            </soapenv:Envelope>
+        </format>
+        <args>
+            <arg evaluator="xml" expression="$ctx:PAIS"/>
+            <arg evaluator="xml" expression="$ctx:OPERADORA"/>
+            <arg evaluator="xml" expression="$ctx:SERVICO"/>
+            <arg evaluator="xml" expression="$ctx:ESTADO"/>
+            <arg evaluator="xml" expression="$ctx:DATAINICIO"/>
+            <arg evaluator="xml" expression="$ctx:DATAFIM"/>
+        </args>
+    </payloadFactory>
+    <header name="Action" scope="default" value="urn:listar_operador_operation"/>
+    <call>
+        <endpoint key="ucc_faturacao_EP"/>
+    </call>
+</sequence>

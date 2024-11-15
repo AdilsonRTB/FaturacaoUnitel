@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="faturacao_atualizar_configuracao_common_properties" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log level="custom">
+        <property name="sequence_name" value="cliente_mais_faturacao_atualizar_configuracao_commom_property"/>
+    </log>
+    <property description="OperationName" name="OperationName" scope="default" type="STRING" value="faturacao_atualizar_configuracao"/>
+    <property description="body" expression="$body" name="body" scope="default" type="OM"/>
+    <property description="USER" expression="json-eval($.OperationRequest.RequestHeader.User.UserID)" name="USER" scope="default" type="STRING"/>
+    <property description="COUNTRY" expression="json-eval($.OperationRequest.RequestBody.atualizar_configuracao.COUNTRY)" name="COUNTRY" scope="default" type="STRING"/>
+    <property description="OPERATOR" expression="json-eval($.OperationRequest.RequestBody.atualizar_configuracao.OPERATOR)" name="OPERATOR" scope="default" type="STRING"/>
+    <property description="COIN" expression="json-eval($.OperationRequest.RequestBody.atualizar_configuracao.COIN)" name="COIN" scope="default" type="STRING"/>
+    <property description="ID" expression="json-eval($.OperationRequest.RequestBody.atualizar_configuracao.ID)" name="ID" scope="default" type="STRING"/>
+</sequence>
