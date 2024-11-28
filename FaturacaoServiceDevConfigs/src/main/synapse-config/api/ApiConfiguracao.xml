@@ -49,4 +49,18 @@
         <outSequence/>
         <faultSequence/>
     </resource>
+    <resource methods="POST" uri-template="/editar_trunk">
+        <inSequence>
+            <sequence key="faturacao_editar_trunk_resource"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" uri-template="/registrar_trunk">
+        <inSequence>
+            <sequence key="faturacao_registrar_trunk_resource"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
 </api>

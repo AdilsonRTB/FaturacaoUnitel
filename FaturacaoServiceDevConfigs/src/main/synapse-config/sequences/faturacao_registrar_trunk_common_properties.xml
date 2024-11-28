@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="faturacao_registrar_trunk_common_properties" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log level="custom">
+        <property name="sequence_name" value="faturacao_registrar_trunk_common_properties"/>
+    </log>
+    <property description="OperationName" name="OperationName" scope="default" type="STRING" value="registrar_trunk"/>
+    <property description="user_create" expression="json-eval($.OperationRequest.RequestHeader.User.UserID)" name="user_create" scope="default" type="STRING"/>
+    <property description="registrar_trunk" expression="json-eval($.OperationRequest.RequestBody.registrar_trunk.registrar_trunk)" name="registrar_trunk" scope="default" type="STRING"/>
+</sequence>

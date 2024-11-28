@@ -7,4 +7,5 @@
     <property description="body" expression="$body" name="body" scope="default" type="OM"/>
     <property description="USER" expression="json-eval($.OperationRequest.RequestHeader.User.UserID)" name="USER" scope="default" type="STRING"/>
     <property description="PAIS" expression="json-eval($.OperationRequest.RequestBody.listar_operadora.PAIS)" name="PAIS" scope="default" type="STRING"/>
+    <property description="NOME" expression="json-eval($.OperationRequest.RequestBody.listar_operadora.NOME)" name="NOME" scope="default" type="STRING"/>
 </sequence>

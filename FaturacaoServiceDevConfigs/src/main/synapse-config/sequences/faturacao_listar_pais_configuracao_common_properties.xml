@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="faturacao_listar_pais_configuracao_common_properties" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log level="custom">
+        <property name="sequence_name" value="cliente_mais_faturacao_listar_pais_configuracao_commom_property"/>
+    </log>
+    <property description="OperationName" name="OperationName" scope="default" type="STRING" value="faturacao_listar_pais_configuracao"/>
+    <property description="body" expression="$body" name="body" scope="default" type="OM"/>
+    <property description="USER" expression="json-eval($.OperationRequest.RequestHeader.User.UserID)" name="USER" scope="default" type="STRING"/>
+    <property description="PAIS" expression="json-eval($.OperationRequest.RequestBody.listar_pais.PAIS)" name="PAIS" scope="default" type="STRING"/>
+    <property description="NOME" expression="json-eval($.OperationRequest.RequestBody.listar_pais.NOME)" name="NOME" scope="default" type="STRING"/>
+</sequence>

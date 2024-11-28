@@ -9,13 +9,15 @@
                 <soapenv:Header/>
                 <soapenv:Body>
                     <ucc:listar_operadora_operation>
-                        <ucc:COUNTRY>$1</ucc:COUNTRY>
+                        <ucc:PAIS>$1</ucc:PAIS>
+                        <ucc:NOME>$2</ucc:NOME>
                     </ucc:listar_operadora_operation>
                 </soapenv:Body>
             </soapenv:Envelope>
         </format>
         <args>
             <arg evaluator="xml" expression="$ctx:PAIS"/>
+            <arg evaluator="xml" expression="$ctx:NOME"/>
         </args>
     </payloadFactory>
     <header name="Action" scope="default" value="urn:listar_operadora_operation"/>

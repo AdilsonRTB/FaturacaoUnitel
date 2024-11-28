@@ -1,41 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sequence name="faturacao_listar_pais_configuracao_validate" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
-    <log level="custom">
-        <property name="sequence_name" value="faturacao_listar_pais_configuracao_validate"/>
+<sequence name="faturacao_editar_trunk_validate" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log description="" level="custom">
+        <property name="sequence_name" value="faturacao_editar_trunk_validate"/>
     </log>
     <validate cache-schema="true" source="json-eval($)">
-        <schema key="faturacao_listar_pais_configuracao_schema"/>
+        <schema key="faturacao_editar_trunk_schema"/>
         <on-fail>
             <payloadFactory media-type="xml">
                 <format>
                     <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ucc="http://ucc_v2.tmais.cv">
                         <soapenv:Header/>
                         <soapenv:Body>
-                            <ucc:faturacao_listar_pais_configuracao_response>
-                                <!--Optional:-->
+                            <ucc:faturacao_editar_trunk_validate_response>
+                                <!-- Optional: -->
                                 <ucc:response_header>
-                                    <!--Optional:-->
+                                    <!-- Optional: -->
                                     <ucc:autorization_result>
-                                        <!--Optional:-->
+                                        <!-- Optional: -->
                                         <ucc:autorization_code>1</ucc:autorization_code>
-                                        <!--Optional:-->
+                                        <!-- Optional: -->
                                         <ucc:autorization_desc>permission ok</ucc:autorization_desc>
                                     </ucc:autorization_result>
-                                    <!--Optional:-->
+                                    <!-- Optional: -->
                                     <ucc:operation_result>
-                                        <!--Optional:-->
+                                        <!-- Optional: -->
                                         <ucc:operation_code>0</ucc:operation_code>
-                                        <!--Optional:-->
+                                        <!-- Optional: -->
                                         <ucc:operation_desc>operation error</ucc:operation_desc>
-                                        <!--Optional:-->
+                                        <!-- Optional: -->
                                         <ucc:operation_type>error</ucc:operation_type>
                                     </ucc:operation_result>
                                 </ucc:response_header>
                                 <ucc:response_body>
-                                    <!--Zero or more repetitions:-->
+                                    <!-- Zero or more repetitions: -->
                                     <ucc:error>$1</ucc:error>
                                 </ucc:response_body>
-                            </ucc:faturacao_listar_pais_configuracao_response>
+                            </ucc:faturacao_editar_trunk_validate_response>
                         </soapenv:Body>
                     </soapenv:Envelope>
                 </format>

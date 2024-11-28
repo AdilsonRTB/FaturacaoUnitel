@@ -8,11 +8,17 @@
             <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ucc="http://ucc_v2.tmais.cv">
                 <soapenv:Header/>
                 <soapenv:Body>
-                    <ucc:listar_pais_operation/>
+                    <ucc:listar_pais_operation>
+                        <ucc:PAIS>$1</ucc:PAIS>
+                        <ucc:NOME>$2</ucc:NOME>
+                    </ucc:listar_pais_operation>
                 </soapenv:Body>
             </soapenv:Envelope>
         </format>
-        <args/>
+        <args>
+            <arg evaluator="xml" expression="$ctx:PAIS"/>
+            <arg evaluator="xml" expression="$ctx:NOME"/>
+        </args>
     </payloadFactory>
     <header name="Action" scope="default" value="urn:listar_pais_operation"/>
     <call>

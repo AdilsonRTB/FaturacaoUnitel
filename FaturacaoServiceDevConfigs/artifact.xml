@@ -122,4 +122,40 @@
     <artifact name="faturacao_listar_tarifas_configuracao_schema" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
         <file>src/main/synapse-config/local-entries/faturacao_listar_tarifas_configuracao_schema.xml</file>
     </artifact>
+    <artifact name="faturacao_editar_trunk_common_properties" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/faturacao_editar_trunk_common_properties.xml</file>
+    </artifact>
+    <artifact name="faturacao_editar_trunk_resource" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/faturacao_editar_trunk_resource.xml</file>
+    </artifact>
+    <artifact name="faturacao_editar_trunk_validate" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/faturacao_editar_trunk_validate.xml</file>
+    </artifact>
+    <artifact name="faturacao_editar_trunk" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/faturacao_editar_trunk.xml</file>
+    </artifact>
+    <artifact name="faturacao_editar_trunk_schema" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/faturacao_editar_trunk_schema.xml</file>
+    </artifact>
+    <artifact name="faturacao_registrar_trunk_common_properties" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/faturacao_registrar_trunk_common_properties.xml</file>
+    </artifact>
+    <artifact name="faturacao_registrar_trunk_resource" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/faturacao_registrar_trunk_resource.xml</file>
+    </artifact>
+    <artifact name="faturacao_registrar_trunk_validate" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/faturacao_registrar_trunk_validate.xml</file>
+    </artifact>
+    <artifact name="faturacao_registrar_trunk" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/faturacao_registrar_trunk.xml</file>
+    </artifact>
+    <artifact name="faturacao_registrar_trunk_schema" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/faturacao_registrar_trunk_schema.xml</file>
+    </artifact>
+    <artifact name="faturacao_listar_pais_configuracao_schema" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/faturacao_listar_pais_configuracao_schema.xml</file>
+    </artifact>
+    <artifact name="faturacao_listar_pais_configuracao_common_properties" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/faturacao_listar_pais_configuracao_common_properties.xml</file>
+    </artifact>
 </artifacts>

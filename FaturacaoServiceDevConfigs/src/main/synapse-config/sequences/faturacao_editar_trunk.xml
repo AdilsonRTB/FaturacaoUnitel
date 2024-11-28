@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="faturacao_editar_trunk" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log level="custom">
+        <property name="sequence_name" value="faturacao_editar_trunk"/>
+    </log>
+    <payloadFactory media-type="xml">
+        <format>
+            <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ucc="http://ucc_v2.tmais.cv">
+                <soapenv:Header/>
+                <soapenv:Body>
+                    <ucc:editar_trunk_operation>
+                        <ucc:id>$1</ucc:id>
+                        <ucc:user_update>$2</ucc:user_update>
+                    </ucc:editar_trunk_operation>
+                </soapenv:Body>
+            </soapenv:Envelope>
+        </format>
+        <args>
+            <arg evaluator="xml" expression="$ctx:id"/>
+            <arg evaluator="xml" expression="$ctx:user_update"/>
+        </args>
+    </payloadFactory>
+    <header name="Action" scope="default" value="urn:editar_trunk_operation"/>
+    <call>
+        <endpoint key="ucc_faturacao_EP"/>
+    </call>
+</sequence>
