@@ -152,4 +152,10 @@
     <artifact name="faturacao_registrar_trunk_schema" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
         <file>src/main/synapse-config/local-entries/faturacao_registrar_trunk_schema.xml</file>
     </artifact>
+    <artifact name="faturacao_listar_pais_configuracao_schema" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/faturacao_listar_pais_configuracao_schema.xml</file>
+    </artifact>
+    <artifact name="faturacao_listar_pais_configuracao_common_properties" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/faturacao_listar_pais_configuracao_common_properties.xml</file>
+    </artifact>
 </artifacts>

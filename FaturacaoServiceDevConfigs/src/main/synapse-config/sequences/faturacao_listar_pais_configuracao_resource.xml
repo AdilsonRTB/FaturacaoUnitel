@@ -5,6 +5,7 @@
         <property name="SequenceName" value="faturacao_listar_pais_configuracao_resource"/>
     </log>
     <sequence key="faturacao_listar_pais_configuracao_validate"/>
+    <sequence key="faturacao_listar_pais_configuracao_common_properties"/>
     <sequence key="API_Request"/>
     <sequence key="AutorizationDigital"/>
     <filter xpath="get-property('RESULT')=1">

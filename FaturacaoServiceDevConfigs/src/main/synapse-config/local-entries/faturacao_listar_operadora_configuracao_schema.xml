@@ -82,10 +82,14 @@
               "properties": {
                 "PAIS": {
                   "type": "string"
+                },
+                "NOME": {
+                  "type": "string"
                 }
               },
               "required": [
-                "PAIS"
+                "PAIS",
+                "NOME"
               ]
             }
           },
